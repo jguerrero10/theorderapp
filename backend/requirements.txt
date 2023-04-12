@@ -1,2 +1,5 @@
-fastapi[all]
+fastapi[all]~=0.95.0
 uvicorn~=0.21.1
+sqlalchemy
+databases[sqlite]
+pydantic~=1.10.7
