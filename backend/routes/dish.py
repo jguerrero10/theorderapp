@@ -7,13 +7,13 @@ from models.dishModels import DishSchema, Dish
 dish_router = APIRouter()
 
 
-@dish_router.get("/", response_model=list[DishSchema])
+@dish_router.get("/")
 async def get_dishes(db: Session = Depends(get_db)):
     dishes = db.query(Dish).all()
     return dishes
 
 
-@dish_router.get("/{dish_id}", response_model=DishSchema)
+@dish_router.get("/{dish_id}")
 async def get_dish(dish_id: int, db: Session = Depends(get_db)):
     dish = db.query(Dish).filter(Dish.id == dish_id).first()
     if not dish:

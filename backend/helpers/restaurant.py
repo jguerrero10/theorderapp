@@ -8,6 +8,7 @@ def restaurant_helper(restaurant: Restaurant) -> dict:
         "logo": restaurant.logo,
         "dishes": [
             {
+                "id": dish.id,
                 "name": dish.name,
                 "description": dish.description,
                 "price": dish.price
